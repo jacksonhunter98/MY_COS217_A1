@@ -50,8 +50,9 @@ int main(int argc, char **argv)
     i = 0;
     j = 0;
     filedes = fopen(argv[1], "r+");
+    printf("%s", argv[1]);
 
-    if (filedes == 0)
+    if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
         return 0;
