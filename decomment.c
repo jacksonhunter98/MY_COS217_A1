@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     }
     fread(buffer, sizeof(char), 10000, filedes);
     
-    while (buffer[i] != '\0')
+    while (buffer[i+1] != '\0')
     {   
         if (state == Accept)
         {   
