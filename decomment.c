@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
     if (state == Accept)
     {   
         printf("%s", buffer);
-        //fwrite(&buffer, sizeof(char), 300, filedes);
+        /*fwrite(&buffer, sizeof(char), 300, filedes);*/
         printf("EXIT_SUCCESS");
         fclose(filedes);
     }
