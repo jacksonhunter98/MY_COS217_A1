@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     j = 0;
     filedes = fopen(argv[1], "r+");
 
-    if (filedes == NULL)
+    if (filedes == 0)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
         return 0;
