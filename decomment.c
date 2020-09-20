@@ -33,7 +33,7 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
             {   
                 state = Reject;
                 nlc = newlinecount(buffer, i);
-                printf("Error: line %d: unterminated comment", nlc);
+/*                printf("Error: line %d: unterminated comment", nlc);*/
                 break;
             }
             j++;
