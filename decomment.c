@@ -48,19 +48,23 @@ int main(void)
     char *fname;
     int i, j;
     FILE *filedes;
-    enum Statetype state = Accept;
-    
+    enum Statetype state = Accept; 
     i = 0;
     j = 0;
-    fname = fgets(buffer, 300, stdin);
+
     filedes = fopen(fname, "r+");
-    printf("%s", fname);
 
     if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
-        return 0;
+        exit(1);
     }
+    while (filedes != EOF)
+    {
+        fname = fgets(buffer, 300, stdin);
+        filedes++;
+    }
+
     fread(&buffer, sizeof(char), 300, filedes);
     
     while (buffer[i+1] != '\0')
