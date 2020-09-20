@@ -52,9 +52,16 @@ int main(void)
     i = 0;
     j = 0;
 
+    while (buffer[i] != EOF)
+    {
+        buffer[i] = scanf("%c", stdin[i])
+        i++;
+    }
+
+    printf(buffer);
+
     fname = fgets(buffer, 300, stdin);
     filedes = fopen(fname, "r+");
-    printf(buffer);
 
     if (filedes == NULL)
     {   
