@@ -57,6 +57,8 @@ int main(void)
         k++;
     }
 
+    k = 0;
+
     if (buffer == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
@@ -106,9 +108,10 @@ int main(void)
 
     if (state == Accept)
     {   
-        while ((c = getchar(buffer)) != EOF)
+        while ((c = buffer[k]) != EOF)
         {
             putchar(c);
+            k++;
         }
         printf("EXIT_SUCCESS");
     }
