@@ -72,7 +72,7 @@ int main(void)
                 i++;
                 while (buffer[i] != '\0')
                 {
-                    if(buffer[i] == '"' && buffer[i-1] != '\\')
+                    if(buffer[i] == '"' && buffer[i+1] != '\\')
                     {
                         i++;
                         break;
@@ -85,7 +85,7 @@ int main(void)
                 i++;
                 while (buffer[i] != '\0')
                 {
-                    if(buffer[i] == '\'' && buffer[i-1] != '\\')
+                    if(buffer[i] == '\'' && buffer[i+1] != '\\')
                     {
                         i++;
                         break;
