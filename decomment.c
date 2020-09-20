@@ -23,14 +23,14 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
 
     if (buffer[i] == '/' && buffer[i+1] == '*')
     {   begin = i;
-        while (buffer[i+j] != '\0')
+        while (buffer[i+j] != EOF)
         {   if(buffer[i+j] == '*' && buffer[i+j+1] == '/')
             {   
                 end = i+j+1;
                 erase(buffer, begin, end);
                 break;
             }
-            else if(buffer[i+j+1] == '\0')
+            else if(buffer[i+j+1] == EOF)
             {   
                 state = Reject;
                 nlc = newlinecount(buffer, i);
@@ -56,21 +56,21 @@ int main(void)
         buffer[k] = c;
         k++;
     }
-    printf(buffer);
+    
     if (buffer == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
         return(0);
     }
     
-    while (buffer[i+1] != '\0')
+    while (buffer[i+1] != EOF)
     {   
         if (state == Accept)
         {   
             if (buffer[i] == '"' && buffer[i-1] != '\\') 
             {
                 i++;
-                while (buffer[i] != '\0')
+                while (buffer[i] != EOF)
                 {
                     if(buffer[i] == '"' && buffer[i-1] != '\\')
                     {
@@ -83,7 +83,7 @@ int main(void)
             if (buffer[i] == '\'' && buffer[i-1] != '\\')
             {
                 i++;
-                while (buffer[i] != '\0')
+                while (buffer[i] != EOF)
                 {
                     if(buffer[i] == '\'' && buffer[i-1] != '\\')
                     {
