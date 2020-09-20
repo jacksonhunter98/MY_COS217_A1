@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 {   char buffer[300];
     int i, j;
     int var;
-    FILE *filedes = var;
+    int *filedes = var;
     enum Statetype state = Accept;
     i = 0;
     j = 0;
