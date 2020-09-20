@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     enum Statetype state = Accept;
     i = 0;
     j = 0;
-    filedes = fopen(argv[1], "r+");
+    filedes = fopen(argv[1], "r+b");
     printf("%s", argv[1]);
 
     if (filedes == NULL)
