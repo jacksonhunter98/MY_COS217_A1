@@ -43,7 +43,7 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
     return state;
 }
 
-int main(int argc, char **argv[])
+int main(void)
 {   char buffer[300];
     char *fname;
     int i, j;
@@ -52,17 +52,14 @@ int main(int argc, char **argv[])
     i = 0;
     j = 0;
 
-    filedes = fopen(argv[1], "r+");
+    fname = fgets(buffer, 300, stdin);
+    filedes = fopen(fname, "r+");
+    printf(buffer);
 
     if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
         return(0);
-    }
-
-    while (filedes != '\0')
-    {
-        fname = fgets(buffer, 300, stdin);
     }
 
     fread(&buffer, sizeof(char), 300, filedes);
