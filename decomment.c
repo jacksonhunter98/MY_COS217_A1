@@ -45,15 +45,16 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
 
 int main(void)
 {   char buffer[300];
-    int i, j, k;
-    char *filedes;
-    FILE *point;
+    char *fname;
+    int i, j;
+    FILE *filedes;
     enum Statetype state = Accept;
     
     i = 0;
     j = 0;
-    k = 300;
-    filedes = fgets(buffer, k, point);
+    fname = fgets(buffer, 300, stdin);
+    filedes = fopen(fname, "r+");
+    printf("%s", fname);
 
     if (filedes == NULL)
     {   
