@@ -8,14 +8,14 @@
 # include <ctype.h>
 
 enum Statetype {Accept, Reject};
-void erase(char buffer[1000], int i, int j);
-int newlinecount(char buffer[1000], int i);
+void erase(char buffer[10000], int i, int j);
+int newlinecount(char buffer[10000], int i);
 
 /*----------------------------------------------------*/
 /* Implement the Accept state of the DFA.             */
 /*----------------------------------------------------*/
 
-enum Statetype handleAcceptstate(char buffer[1000], int i, int j)
+enum Statetype handleAcceptstate(char buffer[10000], int i, int j)
 {   enum Statetype state;
     int begin;
     int end;
@@ -43,7 +43,7 @@ enum Statetype handleAcceptstate(char buffer[1000], int i, int j)
 }
 
 int main(int argc, char** argv)
-{   char buffer[1000];
+{   char buffer[10000];
     int i, j;
     FILE *filedes;
     enum Statetype state = Accept;
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
     }
-    fread(buffer, sizeof(char), 1000, filedes);
+    fread(buffer, sizeof(char), 10000, filedes);
     
     while (buffer[i] != '\0')
     {   
@@ -100,13 +100,13 @@ int main(int argc, char** argv)
 
     if (state == Accept)
     {   
-        fwrite(buffer, sizeof(char), 1000, filedes);
+        fwrite(buffer, sizeof(char), 10000, filedes);
         printf("EXIT_SUCCESS");
     }
     return 0;
 }
 
-int newlinecount(char buffer[1000], int i)
+int newlinecount(char buffer[10000], int i)
 {   
     int c = 0;
     int newline = 0;
@@ -121,7 +121,7 @@ int newlinecount(char buffer[1000], int i)
     return newline;
 }
 
-void erase(char buffer[1000], int i, int j)
+void erase(char buffer[10000], int i, int j)
 {
     while (i != j)
     {
