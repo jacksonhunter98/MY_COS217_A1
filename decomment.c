@@ -45,7 +45,8 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
 int main(int argc, char** argv)
 {   char buffer[300];
     int i, j;
-    FILE *filedes;
+    int var;
+    FILE *filedes = var;
     enum Statetype state = Accept;
     i = 0;
     j = 0;
