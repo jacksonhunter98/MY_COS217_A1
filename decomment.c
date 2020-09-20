@@ -106,10 +106,9 @@ int main(void)
 
     if (state == Accept)
     {   
-        while ((c = getchar(buffer[k])) != EOF)
+        while ((c = getchar(buffer)) != EOF)
         {
             putchar(c);
-            k++;
         }
         printf("EXIT_SUCCESS");
     }
