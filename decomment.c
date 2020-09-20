@@ -106,7 +106,7 @@ int main(void)
 
     if (state == Accept)
     {   
-        printf("%c", buffer);
+        printf("%d", buffer);
         printf("EXIT_SUCCESS");
     }
     return 0;
