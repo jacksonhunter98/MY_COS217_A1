@@ -23,14 +23,14 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
 
     if (buffer[i] == '/' && buffer[i+1] == '*')
     {   begin = i;
-        while (buffer[i+j] != EOF)
+        while (buffer[i+j] != '\0')
         {   if(buffer[i+j] == '*' && buffer[i+j+1] == '/')
             {   
                 end = i+j+1;
                 erase(buffer, begin, end);
                 break;
             }
-            else if(buffer[i+j+1] == EOF)
+            else if(buffer[i+j+1] == '\0')
             {   
                 state = Reject;
                 nlc = newlinecount(buffer, i);
@@ -63,14 +63,14 @@ int main(void)
         return(0);
     }
     
-    while (buffer[i+1] != EOF)
+    while (buffer[i+1] != '\0')
     {   
         if (state == Accept)
         {   
             if (buffer[i] == '"' && buffer[i-1] != '\\') 
             {
                 i++;
-                while (buffer[i] != EOF)
+                while (buffer[i] != '\0')
                 {
                     if(buffer[i] == '"' && buffer[i-1] != '\\')
                     {
@@ -83,7 +83,7 @@ int main(void)
             if (buffer[i] == '\'' && buffer[i-1] != '\\')
             {
                 i++;
-                while (buffer[i] != EOF)
+                while (buffer[i] != '\0')
                 {
                     if(buffer[i] == '\'' && buffer[i-1] != '\\')
                     {
