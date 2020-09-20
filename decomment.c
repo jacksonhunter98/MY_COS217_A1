@@ -52,15 +52,15 @@ int main(void)
     
     i = 0;
     j = 0;
-    fname = fgets(buffer, 300, stdin);
-    filedes = fopen(fname, "r+");
-    printf("%s", fname);
+    fname = fopen(stdin, "r+");
+    filedes = fgets(buffer, 300, fname);
 
     if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
         return 0;
     }
+    
     fread(&buffer, sizeof(char), 300, filedes);
     
     while (buffer[i+1] != '\0')
