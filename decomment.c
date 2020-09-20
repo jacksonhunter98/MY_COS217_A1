@@ -52,12 +52,12 @@ int main(void)
     i = 0;
     j = 0;
 
-    filedes = fopen(fname, "r+");
+    filedes = fopen(stdin, "r+");
 
     if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
-        exit(1);
+        return;
     }
     while (filedes != EOF)
     {
