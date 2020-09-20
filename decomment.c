@@ -20,6 +20,7 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
     int begin;
     int end;
     int nlc;
+
     if (buffer[i] == '/' && buffer[i+1] == '*')
     {   begin = i;
         while (buffer[i+j] != '\0')
@@ -42,15 +43,17 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
     return state;
 }
 
-int main(int argc, char *argv[])
+int main(void)
 {   char buffer[300];
-    int i, j;
-    FILE *filedes;
+    int i, j, k;
+    char *filedes;
+    FILE *point;
     enum Statetype state = Accept;
+    
     i = 0;
     j = 0;
-    filedes = fopen(argv[1], "r+b");
-    printf("%s", argv[1]);
+    k = 300;
+    filedes = fgets(buffer, k, point);
 
     if (filedes == NULL)
     {   
