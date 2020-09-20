@@ -33,7 +33,7 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
             {   
                 state = Reject;
                 nlc = newlinecount(buffer, i);
-                fprintf("Error: line %d: unterminated comment", nlc);
+                printf("Error: line %d: unterminated comment", nlc);
                 break;
             }
             j++;
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 
     if (filedes == NULL)
     {   
-        fprintf("ERROR: FILE DOES NOT EXIST");
+        printf("ERROR: FILE DOES NOT EXIST");
     }
     fread(&buffer, sizeof(char), 300, filedes);
     
@@ -91,7 +91,7 @@ int main(int argc, char** argv)
         }
         if (state == Reject)
         {   
-            fprintf("EXIT_FAILURE");
+            printf("EXIT_FAILURE");
             break;
         }
 
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     if (state == Accept)
     {   
         fwrite(&buffer, sizeof(char), 300, filedes);
-        fprintf("EXIT_SUCCESS");
+        printf("EXIT_SUCCESS");
     }
     return 0;
 }
