@@ -60,7 +60,7 @@ int main(void)
         printf("ERROR: FILE DOES NOT EXIST");
         return 0;
     }
-    
+
     fread(&buffer, sizeof(char), 300, filedes);
     
     while (buffer[i+1] != '\0')
