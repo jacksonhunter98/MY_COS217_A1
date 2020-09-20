@@ -63,7 +63,7 @@ int main(void)
         return(0);
     }
     
-    while (buffer[i+1] != '\0')
+    while (buffer[i] != '\0')
     {   
         if (state == Accept)
         {   
