@@ -56,7 +56,7 @@ int main(void)
         buffer[k] = c;
         k++;
     }
-
+    printf(buffer);
     if (buffer == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
@@ -106,7 +106,7 @@ int main(void)
 
     if (state == Accept)
     {   
-        printf(&buffer, "%c");
+        printf(buffer);
         printf("EXIT_SUCCESS");
     }
     return 0;
