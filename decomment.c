@@ -63,7 +63,7 @@ int main(void)
         return(0);
     }
     
-    while (buffer[i] != '\0')
+    while (buffer[i+1] != '\0')
     {   
         if (state == Accept)
         {   
@@ -106,7 +106,7 @@ int main(void)
 
     if (state == Accept)
     {   
-        printf(buffer, "%c");
+        printf(&buffer, "%c");
         printf("EXIT_SUCCESS");
     }
     return 0;
