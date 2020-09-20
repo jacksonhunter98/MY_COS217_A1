@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     enum Statetype state = Accept;
     i = 0;
     j = 0;
-    filedes = fopen(argv[1], "r+");
+    filedes = fopen(argv[1], "r");
 
     if (filedes == NULL)
     {   
@@ -101,8 +101,7 @@ int main(int argc, char *argv[])
 
     if (state == Accept)
     {   
-        printf("%s", buffer);
-        /*fwrite(&buffer, sizeof(char), 300, filedes);*/
+        fwrite(&buffer, sizeof(char), 300, filedes);
         printf("EXIT_SUCCESS");
         fclose(filedes);
     }
