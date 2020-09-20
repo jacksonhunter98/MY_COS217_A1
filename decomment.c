@@ -52,8 +52,9 @@ int main(void)
     
     i = 0;
     j = 0;
-    filedes = fopen(stdin, "r+");
-    fname = fgets(buffer, 300, filedes);
+    fname = fgets(buffer, 300, stdin);
+    filedes = fopen(fname, "r+");
+    printf("%s", fname);
 
     if (filedes == NULL)
     {   
