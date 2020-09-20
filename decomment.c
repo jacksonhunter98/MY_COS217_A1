@@ -42,7 +42,7 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
     return state;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {   char buffer[300];
     int i, j;
     FILE *filedes;
