@@ -50,13 +50,12 @@ int main(int argc, char** argv)
     i = 0;
     j = 0;
     filedes = fopen(argv[1], "r+");
+    fread(&buffer, sizeof(char), 300, filedes);
 
     if (filedes == NULL)
     {   
         printf("ERROR: FILE DOES NOT EXIST");
-        return 0;
     }
-    fread(&buffer, sizeof(char), 300, filedes);
     
     while (buffer[i+1] != '\0')
     {   
