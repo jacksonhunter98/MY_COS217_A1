@@ -46,22 +46,23 @@ enum Statetype handleAcceptstate(char buffer[300], int i, int j)
 int main(void)
 {   char buffer[300];
     char *fname;
-    int i, j;
+    char c;
+    int i, j, k;
     FILE *filedes;
     enum Statetype state = Accept;
     i = 0;
     j = 0;
-
-    while (buffer[i] != EOF)
+    k = 0;
+    
+    while ((c = getchar()) != EOF)
     {
-        buffer[i] = scanf("%c", stdin[i])
-        i++;
+        buffer[k] = c;
+        k++;
     }
-
-    printf(buffer);
 
     fname = fgets(buffer, 300, stdin);
     filedes = fopen(fname, "r+");
+    printf(buffer);
 
     if (filedes == NULL)
     {   
