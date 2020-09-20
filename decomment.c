@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
     enum Statetype state = Accept;
     i = 0;
     j = 0;
-    filedes = fopen(argv[1], "r+");
-    printf("%s", argv[1]);
+    filedes = fopen(argv[2], "r+");
+    printf("%s", argv[2]);
 
     if (filedes == NULL)
     {   
