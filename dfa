@@ -1,0 +1,10 @@
+DFA Textual Representation
+COS217 Assignment 1
+Jackson Hunter
+
+State 1: Accept State (Default State)
+    0: Unterminated Comment (S2)
+    1: Terminated Comment (S1)
+State 2: Reject State
+    0: Terminated Comment (S1)
+    1: Unterminated Comment (S2)
